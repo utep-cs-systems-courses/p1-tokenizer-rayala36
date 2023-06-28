@@ -15,18 +15,19 @@ int non_space_char(char c);
 /* Returns a pointer to the first character of the next 
    space-separated token in zero-terminated str.  Return a zero pointer if 
    str does not contain any tokens. */
-char *token_start(char *str); 
+char *token_start(char *str);
+
 
 /* Returns a pointer terminator char following *token */
 char *token_terminator(char *token);
 
+
 /* Counts the number of tokens in the string argument. */
-int count_tokens(char *str);
+int count_tokens(char *str);                                                                                                                                                                                     
 
 /* Returns a fresly allocated new zero-terminated string 
    containing <len> chars from <inStr> */
 char *copy_str(char *inStr, short len);
-
 /* Returns a freshly allocated zero-terminated vector of freshly allocated 
    space-separated tokens from zero-terminated str.
 
