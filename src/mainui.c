@@ -28,8 +28,8 @@ int main() {
     printf("@ = exit\n");
     printf("(anything else) = A new part of your history");
 
-    /* Given the options above (which are printed every time a user returns an input), the strings
-       are evaluated based on the operator. */
+    /* Given the options above (which are printed every time a user returns an input), the 
+       strings are evaluated based on the operator. */
     fgets(str, MAX, stdin);
     char *aStr = str;
 
@@ -37,7 +37,8 @@ int main() {
     if(aStr[0] == '@')
       exit(1);
 
-    /* To obtain a string in history via the ID value, the string proceeded by '!' is converted to        an int variable via the "atoi" function.  That value is used by the "get_history" function.        */
+    /* To obtain a string in history via the ID value, the string proceeded by '!' is converted to
+       an int variable via the "atoi" function.  That value is used by the "get_history" function.        */
     if(aStr[0] = '!'){
       int i;
       char *ID;
@@ -53,7 +54,9 @@ int main() {
     }
 
     /*  Without any of the given operators as the first character, it can be concluded that the 
-        string shall be a new element of the history.  This is done by establishing a pointer to a         pointer to a character constant that shall be tokenized.  Through this tokenized constant,         the original string constant is added to the history. */
+	string shall be a new element of the history.  This is done by establishing a pointer to
+	a pointer to a character constant that shall be tokenized.  Through this tokenized 
+	constant, the original string constant is added to the history. */
     char **token = tokenize(str);
     add_history(list, str);
   }

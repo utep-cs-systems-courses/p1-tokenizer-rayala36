@@ -9,12 +9,13 @@ List* init_history(){
   list->root->next = NULL;
   return list;
 }
-/* Adds a history item to the end of the list; (List* list - the linked list), (char* str - the
+/* Adds a history item to the end of the list; (List* list - the linked list), (char* str - the 
    string to store). */
 void add_history(List* list, char* str){
   Item *item = (Item *)malloc(sizeof(Item));
 
-  /* Length value (len) of the string to add to the history is calculated here so the appropriate       amount of space may be allocated for it.*/
+/* Length value (len) of the string to add to the history is calculated here so the appropriate 
+   amount of space may be allocated for it.*/
   int len;
   const char* ptr = str;
   while (*ptr != '\0')
@@ -31,11 +32,13 @@ void add_history(List* list, char* str){
   }
   *(copy + i) = '\0';
 
-  // The string's copy is created and it's place in the history 
+  // The string's copy is created and it's place in the history. 
   item->next = NULL;
   item->str = copy;
 
-  /* The new history item is the new root, and if it is the only item in the list, it's ID value is     1.  Otherwise, if it is not the only item in the history, it's ID and it's place in history is     calculated accordingly. */
+/* The new history item is the new root, and if it is the only item in the list, it's ID value is 
+   1.  Otherwise, if it is not the only item in the history, it's ID and it's place in history is 
+   calculated accordingly. */
   Item *new = list->root;
   if(new == NULL){
      item->id = 1;
@@ -49,8 +52,8 @@ void add_history(List* list, char* str){
 }
   
 /* Retrieve the string stored in the node where Item->id == ID; (List* list - the linked list), 
-(int id - the id of the Item to find).  The appropriate message will be printed if the string is
- not in the history. */
+   (int id - the id of the Item to find).  The appropriate message will be printed if the string 
+   is not in the history. */
 char* get_history(List *list, int id){
     int ID = 0;
     Item *item = list->root;

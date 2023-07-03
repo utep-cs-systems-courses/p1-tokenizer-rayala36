@@ -40,8 +40,8 @@ int count_tokens(char *str)
   int t = 0;
   int in = 0;
 
-  /* "in" is set to 0 unless it is in a string.  Otherwise, the "t" value increments by 1.*/
-  // In other words, the token-counting value increases by one unless it is in a word.
+/* "in" is set to 0 unless it is in a string.  Otherwise, the "t" value increments by 1.  
+   In other words, the token-counting value increases by one unless it is in a word.*/
   while(*str++ != EOF){
     if(space_char(*str))
       in = 0;
@@ -82,7 +82,8 @@ char **tokenize(char *str){
     char *terminate = token_terminator(start);
     int len = (terminate - start);
 
-    /* Establishes a token by copying the string via a pointer to the first char and terminating          with the last char.*/
+/* Establishes a token by copying the string via a pointer to the first char and terminating 
+   with the last char.*/
     token[i] = copy_str(start, len);
     str = token_start(terminate);
     printf("Tokenized word %d: %s\n", (i+1), token[i]);
@@ -90,7 +91,7 @@ char **tokenize(char *str){
   return token;
 }
 
-/* Prints tokens by accessing the pointer to the pointer to the tokens and printing the number
+/* Prints tokens by accessing the pointer to the pointer to the tokens and printing the number 
    value in the user's history proceeded by the token.  Process is carried out with a loop.*/
 void print_tokens(char **tokens){
   int a = 0;
